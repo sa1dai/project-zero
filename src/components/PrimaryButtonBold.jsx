@@ -8,7 +8,7 @@ const PrimaryButtonBold = props => {
     <TouchableOpacity
       activeOpacity={0.7}
       style={{ ...styles.button, ...props.style }}
-      onPress={() => {}}
+      onPress={props.onPress}
     >
       <PrimaryTextBold style={styles.text}>{props.title}</PrimaryTextBold>
     </TouchableOpacity>
