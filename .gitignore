@@ -9,11 +9,6 @@ npm-debug.*
 *.orig.*
 web-build/
 web-report/
-
+/.idea/**/*
 # macOS
 .DS_Store
-/.idea/.gitignore
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/project-zero.iml
-/.idea/vcs.xml
