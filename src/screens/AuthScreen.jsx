@@ -11,8 +11,8 @@ export default class AuthScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: 'test5@test.ru',
-      password: '123456',
+      email: '',
+      password: '',
       isWaitingSignUpResponse: false,
       isWaitingLoginResponse: false
     };
