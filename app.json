@@ -2,6 +2,11 @@
   "expo": {
     "name": "Project Zero",
     "slug": "project-zero",
+    "android": {
+      "package": "maximboychenko.projectzero",
+      "versionCode": 1,
+      "permissions": []
+    },
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
