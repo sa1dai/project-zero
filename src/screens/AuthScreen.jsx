@@ -1,8 +1,14 @@
 import React from 'react';
-import { StyleSheet, TextInput, Alert, ActivityIndicator } from 'react-native';
+import {
+  StyleSheet,
+  TextInput,
+  Alert,
+  ActivityIndicator,
+  AsyncStorage
+} from 'react-native';
 import Card from '../components/Card';
 import Container from '../components/Container';
-import PrimaryButtonBold from '../components/PrimaryButtonBold';
+import PrimaryButton from '../components/PrimaryButton';
 import PrimaryText from '../components/PrimaryText';
 import { isValidEmail } from '../lib/string';
 import { THEME } from '../constants/theme';
@@ -56,9 +62,9 @@ export default class AuthScreen extends React.Component {
       return;
     }
 
-    const responseData = await response.json();
-    console.log(responseData);
+    await AsyncStorage.setItem('isLoggedIn', 'true');
     this.setState({ isWaitingLoginResponse: false });
+    this.props.setLoggedIn(true);
   };
 
   signUp = async () => {
@@ -110,9 +116,9 @@ export default class AuthScreen extends React.Component {
       return;
     }
 
-    const responseData = await response.json();
-    console.log(responseData);
+    await AsyncStorage.setItem('isLoggedIn', 'true');
     this.setState({ isWaitingSignUpResponse: false });
+    this.props.setLoggedIn(true);
   };
 
   render() {
@@ -146,10 +152,10 @@ export default class AuthScreen extends React.Component {
           {isWaitingLoginResponse ? (
             <ActivityIndicator
               style={styles.button}
-              color={THEME.PRIMARY_BUTTON_COLOR}
+              color={THEME.PRIMARY_COLOR}
             />
           ) : (
-            <PrimaryButtonBold
+            <PrimaryButton
               style={styles.button}
               title="Войти"
               onPress={this.login}
@@ -158,10 +164,10 @@ export default class AuthScreen extends React.Component {
           {isWaitingSignUpResponse ? (
             <ActivityIndicator
               style={styles.button}
-              color={THEME.PRIMARY_BUTTON_COLOR}
+              color={THEME.PRIMARY_COLOR}
             />
           ) : (
-            <PrimaryButtonBold
+            <PrimaryButton
               style={styles.button}
               title="Зарегистрироваться"
               onPress={this.signUp}

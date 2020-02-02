@@ -3,7 +3,7 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import { THEME } from '../constants/theme';
 import PrimaryTextBold from './PrimaryTextBold';
 
-const PrimaryButtonBold = props => {
+const SecondaryButton = props => {
   return (
     <TouchableOpacity
       activeOpacity={0.7}
@@ -18,7 +18,7 @@ const PrimaryButtonBold = props => {
 const styles = StyleSheet.create({
   button: {
     borderRadius: 100,
-    backgroundColor: THEME.PRIMARY_BUTTON_COLOR,
+    backgroundColor: THEME.SECONDARY_COLOR,
     padding: 10
   },
   text: {
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default PrimaryButtonBold;
+export default SecondaryButton;
